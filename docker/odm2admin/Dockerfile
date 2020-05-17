@@ -14,15 +14,15 @@ LABEL description='Django admin app for Observation Data Model 2 (ODM2)' \
       programming_language='Python' \
       topic='Scientific/Engineering, Education'
 
-RUN apt-get update --fix-missing && apt-get install --yes apt-utils postgresql-client
+#RUN apt-get update --fix-missing && apt-get install --yes apt-utils postgresql-client
 
 EXPOSE 8000
 
 # && latest=$(git describe --tags) && git checkout ${latest}
-RUN git clone "https://github.com/clebsonpy/CZ-Manager"
-RUN cd CZ-Manager
-
+#RUN git clone "https://github.com/clebsonpy/CZ-Manager"
+RUN mkdir /CZ-Manager
 WORKDIR /CZ-Manager
+COPY .../../ /CZ-Manager/
 
 VOLUME templatesAndSettings/settings/
 
@@ -38,4 +38,4 @@ COPY docker/odm2admin/startup.sh /startup.sh
 #RUN chmod 755 /wait-for-postgres.sh
 #RUN chmod 755 /startup.sh
 
-CMD python manage.py migrate
+CMD python manage.py runserver 0.0.0.0:8000

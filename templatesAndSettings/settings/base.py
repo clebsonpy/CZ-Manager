@@ -172,7 +172,7 @@ WSGI_APPLICATION = 'templatesAndSettings.wsgi.application'
 INSTALLED_APPS = (
     'jquery',
     'djangocms_admin_style',
-    '{}'.format(APP_NAME),
+    'odm2admin',
     'import_export',
     'social_django',
     'daterange_filter',

@@ -92,7 +92,7 @@ from .models import Measurementresults
 from .models import Measurementresultvalues
 from .models import Profileresultvalues
 # from .views import dataloggercolumnView
-from daterange_filter.filter import DateRangeFilter
+# from daterange_filter.filter import DateRangeFilter
 from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter, ChoiceDropdownFilter
 import re
 
@@ -2514,11 +2514,6 @@ class TimeseriesresultvaluesAdmin(ImportExportActionModelAdmin, ReadOnlyAdmin):
     form = TimeseriesresultvaluesAdminForm
     inlines_list = list()
 
-    list_filter = (
-        ('valuedatetime', DateRangeFilter),
-        # MeasurementResultFilter,
-
-    )
     list_display = ['datavalue', 'valuedatetime',
                     'resultid']
     # 'resultid','featureactionid_link','resultid__featureactionid__name',
@@ -2602,11 +2597,6 @@ class MeasurementresultvaluesAdmin(ImportExportActionModelAdmin, ReadOnlyAdmin):
     resource_class = MeasurementresultvaluesResource
 
     # date time filter and list of results you can filter on
-    list_filter = (
-        ('valuedatetime', DateRangeFilter),
-        # MeasurementResultFilter,
-
-    )
     list_display = ['datavalue', 'valuedatetime',
                     'resultid']  # 'resultid','featureactionid_link',
     # 'resultid__featureactionid__name', 'resultid__variable__name'

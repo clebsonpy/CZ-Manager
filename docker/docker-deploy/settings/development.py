@@ -23,7 +23,6 @@ if 'TRAVIS' in os.environ:
 ALLOWED_HOSTS = ['127.0.0.1',]
 """ END ALLOWED HOSTS CONFIGURATION """
 
-
 """ EMAIL CONFIGURATION """
 EMAIL_HOST = 'smtp.host'
 EMAIL_HOST_USER = 'user'
@@ -39,11 +38,11 @@ EMAIL_PORT = 123
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('POSTGRES_HOST'),
-        'PORT': os.environ.get('POSTGRES_PORT'),
+        'NAME': 'odm2',
+        'USER': 'postgres',
+        'PASSWORD': 'test',
+        'HOST': 'db',
+        'PORT': '5432',
         'OPTIONS': {
             'options': '-c search_path=admin,odm2,odm2extra,public'
             }
