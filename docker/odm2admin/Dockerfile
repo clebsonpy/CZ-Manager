@@ -19,11 +19,11 @@ RUN apt-get update --fix-missing && apt-get install --yes apt-utils postgresql-c
 EXPOSE 8000
 
 # && latest=$(git describe --tags) && git checkout ${latest}
-RUN git clone "https://github.com/ODM2/ODM2-Admin"
-RUN cd ODM2-Admin
+RUN git clone "https://github.com/clebsonpy/CZ-Manager"
+RUN cd CZ-Manager
 
 
-WORKDIR /ODM2-Admin
+WORKDIR /CZ-Manager
 
 VOLUME templatesAndSettings/settings/
 
