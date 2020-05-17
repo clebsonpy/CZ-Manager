@@ -1,4 +1,4 @@
-FROM continuumio/miniconda:latest
+FROM thinkwhere/gdal-python
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
@@ -27,7 +27,8 @@ WORKDIR /CZ-Manager
 
 VOLUME templatesAndSettings/settings/
 
-RUN conda create --yes -n odm2adminenv -c conda-forge python=3.6 libgdal boost pytz gdal --file requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 COPY docker/odm2admin/odm2database/odm2adminDB.sql /odm2adminDB.sql
 COPY docker/odm2admin/odm2database/cvload.py /cvload.py

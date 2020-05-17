@@ -3,8 +3,7 @@
 set -e
 
 echo "Activating environment..."
-source activate odm2adminenv
-conda install --yes -c conda-forge sqlalchemy pymysql pyodbc
+pip install sqlalchemy pymysql pyodbc
 pip install djutils
 # pip install git+git://github.com/miguelcleon/django-admin-shortcuts --upgrade
 
