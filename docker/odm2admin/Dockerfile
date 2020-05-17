@@ -22,7 +22,6 @@ EXPOSE 8000
 RUN git clone "https://github.com/clebsonpy/CZ-Manager"
 RUN cd CZ-Manager
 
-
 WORKDIR /CZ-Manager
 
 VOLUME templatesAndSettings/settings/
@@ -36,7 +35,7 @@ COPY docker/odm2admin/odm2database/cvload.py /cvload.py
 COPY docker/odm2admin/wait-for-postgres.sh /wait-for-postgres.sh
 COPY docker/odm2admin/startup.sh /startup.sh
 
-RUN chmod 755 /wait-for-postgres.sh
-RUN chmod 755 /startup.sh
+#RUN chmod 755 /wait-for-postgres.sh
+#RUN chmod 755 /startup.sh
 
-CMD ["/bin/bash", "/wait-for-postgres.sh", "/startup.sh"]
+CMD python manage.py migrate

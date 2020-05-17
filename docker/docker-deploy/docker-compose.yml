@@ -15,6 +15,7 @@ services:
     build: 
       context: ../../
       dockerfile: ./docker/odm2admin/Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
     links:
       - db:db
       - redis:redis
@@ -29,7 +30,7 @@ services:
     - POSTGRES_NAME=odm2
     - POSTGRES_PORT=5432
     volumes:
-      - ../../docker/docker-deploy/settings:/ODM2-Admin/templatesAndSettings/settings
+      - ../../docker/docker-deploy/settings:/CZ-Manager/templatesAndSettings/settings
 
   redis:
     container_name: odm2adminredis
