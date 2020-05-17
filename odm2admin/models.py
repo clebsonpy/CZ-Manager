@@ -2750,7 +2750,7 @@ class Resultnormalizationvalues(models.Model):
         else:
             db_table = r'resultnormalizationvalues'
 
-@python_2_unicode_compatible
+
 class Results(models.Model):
     resultid = models.AutoField(primary_key=True, verbose_name="data result")
     resultuuid = UUIDField(default=uuid.uuid4, editable=False)
