@@ -101,7 +101,7 @@ class Actionannotations(models.Model):
     annotationid = models.ForeignKey('Annotations', db_column='annotationid', on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ActionAnnotations'
@@ -127,7 +127,7 @@ class Actionby(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ActionBy'
@@ -143,7 +143,7 @@ class Actiondirectives(models.Model):
     directiveid = models.ForeignKey('Directives', db_column='directiveid', on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = r'actiondirectives'
 
 
@@ -154,7 +154,7 @@ class Actionextensionpropertyvalues(models.Model):
     propertyvalue = models.CharField(max_length=255)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ActionExtensionPropertyValues'
@@ -192,7 +192,7 @@ class Actions(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Actions'
@@ -225,7 +225,7 @@ class Affiliations(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Affiliations'
@@ -254,7 +254,7 @@ class Annotations(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Annotations'
@@ -276,7 +276,7 @@ class Authorlists(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'AuthorLists'
@@ -316,7 +316,7 @@ class Calibrationactions(models.Model):
     calibrationequation = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CalibrationActions'
@@ -332,7 +332,7 @@ class Calibrationreferenceequipment(models.Model):
                                  on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CalibrationReferenceEquipment'
@@ -349,7 +349,7 @@ class Calibrationstandards(models.Model):
                                  on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CalibrationStandards'
@@ -373,7 +373,7 @@ class Categoricalresults(models.Model):
                                       on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CategoricalResults'
@@ -389,7 +389,7 @@ class Categoricalresultvalueannotations(models.Model):
                                  on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CategoricalResultValueAnnotations'
@@ -406,7 +406,7 @@ class Categoricalresultvalues(models.Model):
     valuedatetimeutcoffset = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CategoricalResultValues'
@@ -427,7 +427,7 @@ class Citationextensionpropertyvalues(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -515,7 +515,7 @@ class Citationexternalidentifiers(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CitationExternalIdentifiers'
@@ -540,7 +540,7 @@ class Citations(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Citations'
@@ -596,7 +596,7 @@ class CvActiontype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_ActionType'
@@ -617,7 +617,7 @@ class CvAggregationstatistic(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_AggregationStatistic'
@@ -637,7 +637,7 @@ class CvAnnotationtype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_AnnotationType'
@@ -657,7 +657,7 @@ class CvCensorcode(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_CensorCode'
@@ -677,7 +677,7 @@ class CvDataqualitytype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_DataQualityType'
@@ -697,7 +697,7 @@ class CvDatasettypecv(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_DatasetType'
@@ -717,7 +717,7 @@ class CvDirectivetype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_DirectiveType'
@@ -737,7 +737,7 @@ class CvElevationdatum(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_ElevationDatum'
@@ -758,7 +758,7 @@ class CvEquipmenttype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_EquipmentType'
@@ -778,7 +778,7 @@ class CvMethodtype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_MethodType'
@@ -798,7 +798,7 @@ class CvOrganizationtype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         # db_table = r'cv_organizationtype'
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -819,7 +819,7 @@ class CvPropertydatatype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_PropertyDataType'
@@ -839,7 +839,7 @@ class CvQualitycode(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_QualityCode'
@@ -860,7 +860,7 @@ class CvReferencematerialmedium(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         db_table = r'cv_referencematerialmedium'
         ordering = ['term', 'name']
 
@@ -876,7 +876,7 @@ class CvRelationshiptype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_RelationshipType'
@@ -896,7 +896,7 @@ class CvResulttype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_ResultType'
@@ -916,13 +916,13 @@ class CvMedium(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
-        db_table = r'cv_medium'
+        managed = True
+        #db_table = r'cv_medium'
         _exportdb = settings.EXPORTDB
-        if _exportdb:
-            db_table = r'CV_Medium'
-        else:
-            db_table = r'cv_medium'
+        #if _exportdb:
+        #    db_table = r'CV_Medium'
+        #else:
+        #    db_table = r'cv_medium'
         ordering = ['term', 'name']
 
 
@@ -937,7 +937,7 @@ class CvSamplingfeaturegeotype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_SamplingFeatureGeoType'
@@ -958,7 +958,7 @@ class CvSamplingfeaturetype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_SamplingFeatureType'
@@ -979,7 +979,7 @@ class CvSitetype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_SiteType'
@@ -999,7 +999,7 @@ class CvSpatialoffsettype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_SpatialOffsetType'
@@ -1019,7 +1019,7 @@ class CvSpeciation(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_Speciation'
@@ -1039,7 +1039,7 @@ class CvSpecimenmedium(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         db_table = r'cv_medium'
         ordering = ['term', 'name']
 
@@ -1055,7 +1055,7 @@ class CvSpecimentype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_SpecimenType'
@@ -1075,7 +1075,7 @@ class CvStatus(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_Status'
@@ -1095,7 +1095,7 @@ class CvTaxonomicclassifiertype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -1117,7 +1117,7 @@ class CvUnitstype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_UnitsType'
@@ -1137,7 +1137,7 @@ class CvVariablename(models.Model):
         return u"{}".format(self.name)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_VariableName'
@@ -1157,7 +1157,7 @@ class CvVariabletype(models.Model):
         return u"%s" % self.name
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'CV_VariableType'
@@ -1214,7 +1214,7 @@ class Dataloggerfilecolumns(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'DataloggerFileColumns'
@@ -1240,7 +1240,7 @@ class Dataloggerfiles(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'DataLoggerFiles'
@@ -1334,7 +1334,7 @@ class Dataloggerprogramfiles(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'DataloggerProgramFiles'
@@ -1368,7 +1368,7 @@ class Dataquality(models.Model):
             self.dataqualitycode, self.dataqualityvalue, self.dataqualityvalueunitsid)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'DataQuality'
@@ -1389,7 +1389,7 @@ class Datasetcitations(models.Model):
                                    on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'DatasetCitations'
@@ -1415,7 +1415,7 @@ class Datasets(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Datasets'
@@ -1439,7 +1439,7 @@ class Datasetsresults(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'DatasetsResults'
@@ -1456,7 +1456,7 @@ class Derivationequations(models.Model):
         s = u"%s" % self.derivationequation
         return s
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'DerivationEquations'
@@ -1471,7 +1471,7 @@ class Directives(models.Model):
     directivedescription = models.CharField(max_length=500)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Directives'
@@ -1498,7 +1498,7 @@ class Equipment(models.Model):
     equipmentdocumentationlink = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Equipment'
@@ -1514,7 +1514,7 @@ class Equipmentannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'EquipmentAnnotations'
@@ -1545,7 +1545,7 @@ class Equipmentmodels(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'EquipmentModels'
@@ -1562,7 +1562,7 @@ class Equipmentused(models.Model):
                                     on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'EquipmentUsed'
@@ -1586,7 +1586,7 @@ class Extensionproperties(models.Model):
         return u"%s - %s" % (self.propertyname, self.propertydescription)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ExtensionProperties'
@@ -1609,7 +1609,7 @@ class Externalidentifiersystems(models.Model):
         return u"%s" % self.externalidentifiersystemname
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ExternalIdentifierSystems'
@@ -1645,7 +1645,7 @@ class Featureactions(models.Model):
     #         fan = FeatureactionsNames.objects.create(featureactionid=self, name=s)
     #     super(Featureactions, self).save(*args, **kwargs)
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'FeatureActions'
@@ -1696,7 +1696,7 @@ class Instrumentoutputvariables(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'InstrumentOutputVariables'
@@ -1713,7 +1713,7 @@ class Maintenanceactions(models.Model):
     maintenancereason = models.CharField(max_length=500, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'MaintenanceActions'
@@ -1767,7 +1767,7 @@ class Measurementresults(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'MeasurementResults'
@@ -1785,7 +1785,7 @@ class Measurementresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'MeasurementResultValueAnnotations'
@@ -1859,7 +1859,7 @@ class Measurementresultvalues(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'MeasurementResultValues'
@@ -1900,7 +1900,7 @@ class Methodannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'MethodAnnotations'
@@ -1924,7 +1924,7 @@ class Methodcitations(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'MethodCitations'
@@ -1942,7 +1942,7 @@ class Methodextensionpropertyvalues(models.Model):
     propertyvalue = models.CharField(max_length=255)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'MethodExtensionPropertyValues'
@@ -1961,7 +1961,7 @@ class Methodexternalidentifiers(models.Model):
     methodexternalidentifieruri = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -2001,7 +2001,7 @@ class Methods(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Methods'
@@ -2021,7 +2021,7 @@ class Modelaffiliations(models.Model):
     roledescription = models.CharField(max_length=5000, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ModelAffiliations'
@@ -2038,7 +2038,7 @@ class Models(models.Model):
     modellink = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -2070,7 +2070,7 @@ class Organizations(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Organizations'
@@ -2092,7 +2092,7 @@ class People(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'People'
@@ -2120,7 +2120,7 @@ class Personexternalidentifiers(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'PersonExternalIdentifiers'
@@ -2156,7 +2156,7 @@ class Pointcoverageresults(models.Model):
     timeaggregationintervalunitsid = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'PointCoverageResults'
@@ -2172,7 +2172,7 @@ class Pointcoverageresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'PointCoverageResultValueAnnotations'
@@ -2199,7 +2199,7 @@ class Pointcoverageresultvalues(models.Model):
                                       on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'PointCoverageResultValues'
@@ -2222,7 +2222,7 @@ class Processinglevels(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ProcessingLevels'
@@ -2282,7 +2282,7 @@ class Profileresults(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ProfileResults'
@@ -2299,7 +2299,7 @@ class Profileresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ProfileResultValueAnnotations'
@@ -2407,7 +2407,7 @@ class Profileresultvalues(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ProfileResultValues'
@@ -2427,7 +2427,7 @@ class Referencematerialexternalidentifiers(models.Model):
     referencematerialexternalidentifieruri = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ReferenceMaterialExternalIdentifiers'
@@ -2453,7 +2453,7 @@ class Referencematerials(models.Model):
                                           on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ReferenceMaterials'
@@ -2475,7 +2475,7 @@ class Referencematerialvalues(models.Model):
                                    on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ReferenceMaterialValues'
@@ -2504,7 +2504,7 @@ class Relatedactions(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedActions'
@@ -2525,7 +2525,7 @@ class Relatedannotations(models.Model):
                                             on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedAnnotations'
@@ -2544,7 +2544,7 @@ class Relatedcitations(models.Model):
                                           on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedCitations'
@@ -2564,7 +2564,7 @@ class Relateddatasets(models.Model):
     versioncode = models.CharField(max_length=50, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedDatasets'
@@ -2587,7 +2587,7 @@ class Relatedequipment(models.Model):
     relationshipenddatetimeutcoffset = models.IntegerField(blank=True, null=True, default=settings.UTC_OFFSET)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedEquipment'
@@ -2617,7 +2617,7 @@ class Relatedfeatures(models.Model):
             self.samplingfeatureid, self.relationshiptypecv, self.relatedfeatureid)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedFeatures'
@@ -2635,7 +2635,7 @@ class Relatedmodels(models.Model):
     relatedmodelid = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedModels'
@@ -2662,7 +2662,7 @@ class Relatedresults(models.Model):
         return u"%s - %s - %s" % (
             self.resultid, self.relationshiptypecv, self.relatedresultid)
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'RelatedResults'
@@ -2686,7 +2686,7 @@ class Resultannotations(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ResultAnnotations'
@@ -2706,7 +2706,7 @@ class Resultderivationequations(models.Model):
         return u"%s - %s" % (self.resultid, self.derivationequationid)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ResultDerivationEquations'
@@ -2726,7 +2726,7 @@ class Resultextensionpropertyvalues(models.Model):
         return u"%s - %s: value %s" % (self.resultid, self.propertyid, self.propertyvalue)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ResultExtensionPropertyValues'
@@ -2743,7 +2743,7 @@ class Resultnormalizationvalues(models.Model):
         on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ResultNormalizationValues'
@@ -2829,7 +2829,7 @@ class Results(models.Model):
         return "%s - %s - ID: %s" % (self.variableid, self.featureactionid, self.resultid)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Results'
@@ -2851,7 +2851,7 @@ class Resultsdataquality(models.Model):
         return u"%s - %s" % (self.resultid, self.dataqualityid)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'ResultsDataQuality'
@@ -2875,7 +2875,7 @@ class Samplingfeatureannotations(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SamplingFeatureAnnotations'
@@ -2899,7 +2899,7 @@ class Samplingfeatureextensionpropertyvalues(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SamplingFeatureExtensionPropertyValues'
@@ -2925,7 +2925,7 @@ class Samplingfeatureexternalidentifiers(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SamplingFeatureExternalIdentifiers'
@@ -2969,7 +2969,7 @@ class Samplingfeatures(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         print(_exportdb)
         if _exportdb:
@@ -3010,7 +3010,7 @@ class Sectionresults(models.Model):
                                                on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SectionResults'
@@ -3026,7 +3026,7 @@ class Sectionresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SectionResultValueAnnotations'
@@ -3062,7 +3062,7 @@ class Sectionresultvalues(models.Model):
                                                        on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SectionResultValues'
@@ -3087,7 +3087,7 @@ class Simulations(models.Model):
                                 on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Simulations'
@@ -3108,7 +3108,7 @@ class Sites(models.Model):
                                            on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         verbose_name = 'Site'
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -3139,7 +3139,7 @@ class Spatialoffsets(models.Model):
                                       on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SpatialOffsets'
@@ -3158,7 +3158,7 @@ class Spatialreferenceexternalidentifiers(models.Model):
     spatialreferenceexternalidentifieruri = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SpatialReferenceExternalIdentifiers'
@@ -3175,7 +3175,7 @@ class Spatialreferences(models.Model):
     srslink = models.CharField(max_length=255, blank=True, verbose_name='spatial reference link')
 
     class Meta:
-        managed = False
+        managed = True
         verbose_name = 'Spatial reference'
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -3198,7 +3198,7 @@ class Specimenbatchpostions(models.Model):
     batchpositionlabel = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SpecimenBatchPostions'
@@ -3221,7 +3221,7 @@ class Specimens(models.Model):
                                                     specmedcv=self.specimenmediumcv)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'Specimens'
@@ -3242,7 +3242,7 @@ class Specimentaxonomicclassifiers(models.Model):
                                    on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SpecimenTaxonomicClassifiers'
@@ -3281,7 +3281,7 @@ class Spectraresults(models.Model):
                                                on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SpectraResults'
@@ -3297,7 +3297,7 @@ class Spectraresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SpectraResultValueAnnotations'
@@ -3326,7 +3326,7 @@ class Spectraresultvalues(models.Model):
                                                        on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'SpectraResultValues'
@@ -3346,7 +3346,7 @@ class Taxonomicclassifierexternalidentifiers(models.Model):
     taxonomicclassifierexternalidentifieruri = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'TaxonomicClassifierExternalIdentifiers'
@@ -3408,7 +3408,7 @@ class Taxonomicclassifiers(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'TaxonomicClassifiers'
@@ -3457,7 +3457,7 @@ class Timeseriesresults(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -3476,7 +3476,7 @@ class Timeseriesresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'TimeSeriesResultValueAnnotations'
@@ -3571,7 +3571,7 @@ class Timeseriesresultvalues(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'TimeSeriesResultValues'
@@ -3791,7 +3791,7 @@ class Trajectoryresults(models.Model):
                                                on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -3808,7 +3808,7 @@ class Trajectoryresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'TrajectoryResultValueAnnotations'
@@ -3847,7 +3847,7 @@ class Trajectoryresultvalues(models.Model):
                                                        on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -3882,7 +3882,7 @@ class Transectresults(models.Model):
                                                on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
 
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -3899,7 +3899,7 @@ class Transectresultvalueannotations(models.Model):
                                      on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'TransectResultValueAnnotations'
@@ -3938,7 +3938,7 @@ class Transectresultvalues(models.Model):
                                                        on_delete=models.CASCADE)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'TransectResultValues'
@@ -3970,7 +3970,7 @@ class Units(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         ordering = ('unitsabbreviation', 'unitsname',)
         _exportdb = settings.EXPORTDB
         if _exportdb:
@@ -3989,7 +3989,7 @@ class Variableextensionpropertyvalues(models.Model):
     propertyvalue = models.CharField(max_length=255)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'VariableExtensionPropertyValues'
@@ -4008,7 +4008,7 @@ class Variableexternalidentifiers(models.Model):
     variableexternalidentifieruri = models.CharField(max_length=255, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         _exportdb = settings.EXPORTDB
         if _exportdb:
             db_table = r'VariableExternalIdentifiers'
@@ -4044,7 +4044,7 @@ class Variables(models.Model):
         return s
 
     class Meta:
-        managed = False
+        managed = True
         ordering = ('variablecode', 'variable_name',)
         _exportdb = settings.EXPORTDB
         if _exportdb:
