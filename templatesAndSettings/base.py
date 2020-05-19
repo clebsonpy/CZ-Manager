@@ -197,10 +197,10 @@ WSGI_APPLICATION = 'templatesAndSettings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'odm2sample',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'NAME': 'flowhub',
+        'USER': 'flow',
+        'PASSWORD': 'flow',
+        'HOST': 'postgres',
         'PORT': '5432',
         'OPTIONS': {
             'options': '-c search_path=admin,odm2,odm2extra'
