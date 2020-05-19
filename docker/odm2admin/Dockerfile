@@ -19,10 +19,11 @@ LABEL description='Django admin app for Observation Data Model 2 (ODM2)' \
 EXPOSE 8000
 
 # && latest=$(git describe --tags) && git checkout ${latest}
-#RUN git clone "https://github.com/clebsonpy/CZ-Manager"
-RUN mkdir /CZ-Manager
+RUN git clone "https://github.com/clebsonpy/CZ-Manager"
+#RUN mkdir /CZ-Manager
+RUN cd
 WORKDIR /CZ-Manager
-COPY .../../ /CZ-Manager/
+#COPY .../../ /CZ-Manager/
 
 VOLUME templatesAndSettings/settings/
 
