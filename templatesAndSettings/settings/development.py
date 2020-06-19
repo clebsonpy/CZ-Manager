@@ -42,12 +42,12 @@ EMAIL_PORT = 123
 if TRAVIS_ENVIRONMENT:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'test',  # Must match travis.yml setting
-            'USER': 'postgres',
-            'PASSWORD': '',
-            'HOST': 'localhost',
-            'PORT': '',
+            'ENGINE': 'django.contrib.gis.db.backends.postgis',
+            'NAME': 'flowhub',  # Must match travis.yml setting
+            'USER': 'flow',
+            'PASSWORD': 'flow',
+            'HOST': 'postgres',
+            'PORT': '5432',
         }
     }
 else:
@@ -59,10 +59,10 @@ else:
         },
             'default': {
                 'ENGINE': 'django.contrib.gis.db.backends.postgis',
-                'NAME': 'db_name',
-                'USER': 'user',
-                'PASSWORD': 'password',
-                'HOST': 'localhost',
+                'NAME': 'flowhub',
+                'USER': 'flow',
+                'PASSWORD': 'flow',
+                'HOST': 'postgres',
                 'PORT': '5432',
                 'OPTIONS': {
                     'options': '-c search_path=public,admin,odm2,odm2extra'
