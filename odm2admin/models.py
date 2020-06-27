@@ -588,9 +588,9 @@ class Citations(models.Model):
 class CvActiontype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -609,9 +609,9 @@ class CvActiontype(models.Model):
 class CvAggregationstatistic(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -629,9 +629,9 @@ class CvAggregationstatistic(models.Model):
 class CvAnnotationtype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -649,9 +649,9 @@ class CvAnnotationtype(models.Model):
 class CvCensorcode(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -669,9 +669,9 @@ class CvCensorcode(models.Model):
 class CvDataqualitytype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -689,9 +689,9 @@ class CvDataqualitytype(models.Model):
 class CvDatasettypecv(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -709,9 +709,9 @@ class CvDatasettypecv(models.Model):
 class CvDirectivetype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -729,9 +729,9 @@ class CvDirectivetype(models.Model):
 class CvElevationdatum(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -750,9 +750,9 @@ class CvElevationdatum(models.Model):
 class CvEquipmenttype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -770,9 +770,9 @@ class CvEquipmenttype(models.Model):
 class CvMethodtype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -790,9 +790,9 @@ class CvMethodtype(models.Model):
 class CvOrganizationtype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -811,9 +811,9 @@ class CvOrganizationtype(models.Model):
 class CvPropertydatatype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -831,9 +831,9 @@ class CvPropertydatatype(models.Model):
 class CvQualitycode(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -852,9 +852,9 @@ class CvQualitycode(models.Model):
 class CvReferencematerialmedium(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -868,9 +868,9 @@ class CvReferencematerialmedium(models.Model):
 class CvRelationshiptype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -888,9 +888,9 @@ class CvRelationshiptype(models.Model):
 class CvResulttype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -908,9 +908,9 @@ class CvResulttype(models.Model):
 class CvMedium(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -929,9 +929,9 @@ class CvMedium(models.Model):
 class CvSamplingfeaturegeotype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -950,9 +950,9 @@ class CvSamplingfeaturegeotype(models.Model):
 class CvSamplingfeaturetype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -971,9 +971,9 @@ class CvSamplingfeaturetype(models.Model):
 class CvSitetype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -991,9 +991,9 @@ class CvSitetype(models.Model):
 class CvSpatialoffsettype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -1011,9 +1011,9 @@ class CvSpatialoffsettype(models.Model):
 class CvSpeciation(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -1031,9 +1031,9 @@ class CvSpeciation(models.Model):
 class CvSpecimenmedium(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -1047,9 +1047,9 @@ class CvSpecimenmedium(models.Model):
 class CvSpecimentype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -1067,9 +1067,9 @@ class CvSpecimentype(models.Model):
 class CvStatus(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -1087,9 +1087,9 @@ class CvStatus(models.Model):
 class CvTaxonomicclassifiertype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -1109,9 +1109,9 @@ class CvTaxonomicclassifiertype(models.Model):
 class CvUnitstype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name
@@ -1129,9 +1129,9 @@ class CvUnitstype(models.Model):
 class CvVariablename(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"{}".format(self.name)
@@ -1149,9 +1149,9 @@ class CvVariablename(models.Model):
 class CvVariabletype(models.Model):
     term = models.CharField(max_length=255)
     name = models.CharField(primary_key=True, max_length=255)
-    definition = models.CharField(max_length=1000, blank=True)
-    category = models.CharField(max_length=255, blank=True)
-    sourcevocabularyuri = models.CharField(max_length=255, blank=True)
+    definition = models.CharField(max_length=10000, blank=True, null=True)
+    category = models.CharField(max_length=255, blank=True, null=True)
+    sourcevocabularyuri = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return u"%s" % self.name

@@ -72,9 +72,9 @@ SENSOR_DASHBOARD = {
 
 """ MAP CONFIGURATION """
 MAP_CONFIG = {
-    "lat": 0,
-    "lon": 0,
-    "zoom": 2,
+    "lat": -9.36,
+    "lon": -37.55,
+    "zoom": 5,
     "cluster_feature_types": ['Profile','Specimen','Excavation','Field area'],
     "time_series_months": 1,
     "display_titles": True,

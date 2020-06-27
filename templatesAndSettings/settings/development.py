@@ -43,10 +43,10 @@ if TRAVIS_ENVIRONMENT:
     DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': 'flowhub',  # Must match travis.yml setting
-            'USER': 'flow',
-            'PASSWORD': 'flow',
-            'HOST': 'postgres',
+            'NAME': 'odm2',  # Must match travis.yml setting
+            'USER': 'postgres',
+            'PASSWORD': 'test',
+            'HOST': 'db',
             'PORT': '5432',
         }
     }
@@ -59,10 +59,10 @@ else:
         },
             'default': {
                 'ENGINE': 'django.contrib.gis.db.backends.postgis',
-                'NAME': 'flowhub',
-                'USER': 'flow',
-                'PASSWORD': 'flow',
-                'HOST': 'postgres',
+                'NAME': 'odm2',
+                'USER': 'postgres',
+                'PASSWORD': 'test',
+                'HOST': 'db',
                 'PORT': '5432',
                 'OPTIONS': {
                     'options': '-c search_path=public,admin,odm2,odm2extra'

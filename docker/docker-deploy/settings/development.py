@@ -55,6 +55,7 @@ DATABASES = {
 SENSOR_DASHBOARD = {
     "time_series_days": 30,
     "featureactionids": [1699, 1784,1782,1701],
+    "resultids": [1]
 }
 """ END SENSOR DASHBOARD CONFIGURATION"""
 

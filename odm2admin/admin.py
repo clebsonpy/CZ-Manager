@@ -48,6 +48,8 @@ from .forms import TimeseriesresultsAdmin
 from .forms import TimeseriesresultvaluesAdmin
 from .forms import UnitsAdmin
 from .forms import VariablesAdmin
+from .forms import CVOrganizationTypeAdmin
+
 from .models import Actionby
 from .models import Actions
 from .models import Affiliations
@@ -97,6 +99,20 @@ from .models import Timeseriesresults
 from .models import Timeseriesresultvalues
 from .models import Units
 from .models import Variables
+from .models import CvOrganizationtype
+from .models import CvUnitstype
+from .models import CvActiontype
+from .models import CvCensorcode
+from .models import CvAggregationstatistic
+from .models import CvDataqualitytype
+
+
+admin.site.register(CvOrganizationtype, CVOrganizationTypeAdmin)
+admin.site.register(CvUnitstype, admin.ModelAdmin)
+admin.site.register(CvActiontype, admin.ModelAdmin)
+admin.site.register(CvCensorcode, admin.ModelAdmin)
+admin.site.register(CvAggregationstatistic, admin.ModelAdmin)
+admin.site.register(CvDataqualitytype, admin.ModelAdmin)
 
 admin.site.register(Dataquality, DataqualityAdmin)
 admin.site.register(Resultsdataquality, ResultsdataqualityAdmin)
@@ -107,7 +123,7 @@ admin.site.register(Authorlists, AuthorlistsAdmin)
 admin.site.register(Methodcitations, MethodcitationsAdmin)
 admin.site.register(Extensionproperties, ExtensionpropertiesAdmin)
 admin.site.register(Citationextensionpropertyvalues, CitationextensionpropertyvaluesAdmin)
-admin.site.register(Annotations, AnnotationsAdmin)
+admin.site.register(Annotations, admin.ModelAdmin)
 admin.site.register(CvAnnotationtype, CVAnnotationtypeAdmin)
 admin.site.register(Profileresults, ProfileresultsAdmin)
 admin.site.register(Profileresultvalues, ProfileresultsvaluesAdmin)

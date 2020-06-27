@@ -10,7 +10,7 @@ except ImportError:
 import xml.etree.ElementTree as ET
 import argparse
 
-
+import psycopg2
 
 # ################################################################################
 # CV  Objects
@@ -255,6 +255,7 @@ class CVSamplingFeatureType(Base):
         return "<CV('%s', '%s', '%s', '%s')>" %(self.Term, self.Name, self.Definition, self.Category)
 
 
+
 class CVSpatialOffsetType(Base):
     __tablename__ = 'cv_spatialoffsettype'
     __table_args__ = {u'schema': 'odm2'}
@@ -421,12 +422,12 @@ info = "A simple script that loads up cvterms into a blank ODM2 database"
 parser = MyParser(description=info, add_help=True)
 parser.add_argument(
         help="Format: {engine}+{driver}://{user}:{pass}@{address}/{db}\n"
-        "mysql+pymysql://ODM:odm@localhost/odm2\n"
-        "mssql+pyodbc://ODM:123@localhost/odm2\n"
+        "mysql+pymysql://ODM:odm@localhost/odm2\n\n"
+        "mssql+pyodbc://ODM:123@localhost/odm2?driver=SQL+Server+Native+Client+11.0\n"
         "postgresql+psycopg2://ODM:odm@test.uwrl.usu.edu/odm2\n"
         "sqlite+pysqlite:///path/to/file",
         default=True, type=str, dest='conn_string')
-parser.add_argument('-d', '--debug', 
+parser.add_argument('-d', '--debug',
         help="Debugging program without committing anything to"
         " remote database",
         action="store_true")
@@ -435,7 +436,7 @@ args = parser.parse_args()
 # ------------------------------------------------------------------------------
 #                                   Script Begin
 # ------------------------------------------------------------------------------
-## Verify connection string 
+## Verify connection string
 conn_string = args.conn_string
 
 
@@ -495,19 +496,19 @@ skos = "{http://www.w3.org/2004/02/skos/core#}%s"
 odm2 = "{http://vocabulary.odm2.org/ODM2/ODM2Terms/}%s"
 
 # ------------------------------------------------------------------------------
-#                                  Progress bar 
+#                                  Progress bar
 # ------------------------------------------------------------------------------
 def update_progress(count, value):
     sys.stdout.write("\033[K\r")
     sys.stdout.flush()
-    sys.stdout.write("[%-26s] %d%% %s Loaded\r" % 
+    sys.stdout.write("[%-26s] %d%% %s Loaded\r" %
                      ('='*count, (count+0.0)/len(vocab)*100, str(value)))
     sys.stdout.flush()
 
 for count, (key, value) in enumerate(vocab):
     # print (count, key, value)
     # print ("\tLoading %s" % key)
-    update_progress(count, value)                
+    update_progress(count, value)
     try:
         data = request.urlopen(url % key).read()
         root = ET.fromstring(data)
@@ -519,27 +520,25 @@ for count, (key, value) in enumerate(vocab):
                 obj.Term = voc.attrib[rdf%"about"].split('/')[-1]
                 obj.Name = voc.find(skos%"prefLabel").text
                 # obj.Definition = voc.find(skos%"definition").text.encode('UTF-8') if voc.find(skos%"definition") is not None else None
-                obj.Definition = voc.find(skos%"definition").text.encode('unicode_escape') if voc.find(skos%"definition") is not None else None
-                obj.Category = category = voc.find(odm2%"category").text if voc.find(odm2 % "category") is not None else None
+                obj.Definition = voc.find(skos%"definition").text.encode('unicode_escape') if voc.find(skos%"definition") is not None else ""
+                obj.Category = category = voc.find(odm2%"category").text if voc.find(odm2 % "category") is not None else ""
                 obj.SourceVocabularyUri = voc.attrib[rdf%"about"]
                 objs.append(obj)
             except Exception as e:
                 session.rollback()
                 if obj.Name is not None:
-                    print("issue loading single object %s: %s " %(obj.Name, e))
+                    print ("issue loading single object %s: %s " %(obj.Name, e))
                 pass
         session.add_all(objs)
         if not args.debug:
            session.commit()
     except Exception as e:
         session.rollback()
-        if "Duplicate entry" in e.message:
-            e = "Controlled Vocabulary has already been loaded"
-        print("\t...%s Load was unsuccesful: \n%s" % (key, e))
+
+        print ("\t...%s Load was unsuccesful: \n%s" % (key, e))
         sys.stdout.write("\n\n... %sLoad was unsuccessful: %s\r"%(key,e))
         sys.stdout.flush()
 
 update_progress(len(vocab), "CV_Terms")
 sys.stdout.write("\nCV Load has completed\r\n")
 sys.stdout.flush()
-

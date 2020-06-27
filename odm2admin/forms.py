@@ -84,6 +84,8 @@ from .models import Variables
 from .models import Resultderivationequations
 from .models import Derivationequations
 from .models import CvCensorcode
+from .models import CvOrganizationtype
+
 # from io import StringIO
 from ajax_select import make_ajax_field
 from ajax_select.fields import AutoCompleteSelectField
@@ -512,6 +514,12 @@ class CVAnnotationtypeAdmin(admin.ModelAdmin):
     search_fields = ['name', 'definition']
     class Meta:
         model = CvAnnotationtype
+
+class CVOrganizationTypeAdmin(admin.ModelAdmin):
+    ordering = ['name']
+    search_fields = ['name', 'definition']
+    class Meta:
+        model = CvOrganizationtype
 
 class AnnotationsAdmin(admin.ModelAdmin):
     user_readonly = [p.name for p in Annotations._meta.get_fields() if not p.one_to_many]
